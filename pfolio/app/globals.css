@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+body {
+    background-color: #1e1e2e;
+    font-family: "Courier New", monospace;
+}
+
+h1{
+    color: hsl(226, 64%, 88%);
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+p{
+    color: hsl(219, 18%, 80%);
+    font-size: 1rem;
+    text-align: justify;
+}
