@@ -11,7 +11,7 @@ export default function RootLayout({
         
         <div className="flex h-screen md:items-start flex-col
         md:mt-[10%] md:ml-[15%]
-        m-[10%]">
+        items-start m-[10%]">
           {children}
         </div>
 
