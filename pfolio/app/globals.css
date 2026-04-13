@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
-body {
+body{
     background-color: #1e1e2e;
     font-family: "Courier New", monospace;
 }
 
-h1 {
+h1{
     color: hsl(226, 64%, 88%);
     font-weight: bold;
     font-size: 2.5rem;

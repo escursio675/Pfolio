@@ -1,4 +1,6 @@
 import NameReveal from "@/components/name-reveal"
+import ExperienceAndEducation from "@/components/experience-and-education"
+
 import {intro} from "@/data/text"
 
 export default function Home(){
@@ -8,10 +10,11 @@ export default function Home(){
 
       <NameReveal />
 
-      <p className="xl:max-w-[43vw] max-w-full"> {intro}</p>
-    
-    
+      <p className="xl:max-w-[43vw] max-w-full xl:mt-[1vh]"> {intro}</p>
 
+      <ExperienceAndEducation />
+    
+    
     </>
   )
 
