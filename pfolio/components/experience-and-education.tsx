@@ -4,6 +4,7 @@ import {Experience, experiences} from "@/data/experience";
 import { Education, educations } from "@/data/education";
 
 import {useState} from "react";
+import Image from "next/image";
 
 export default function ExperienceAndEducation () {
 
@@ -42,9 +43,8 @@ export default function ExperienceAndEducation () {
                             className="flex flex-col gap-5">
                                 <div className="flex flex-row gap-4">
                                     <div className="w-15 h-15 rounded-full overflow-hidden">
-                                        <img className="h-full w-full object-cover"
-                                            src={experience.companyLogo}>                                
-                                        </img>
+                                        <Image className="h-full w-full object-cover"
+                                            src={experience.companyLogo} alt="logo"/>                                
                                     </div>
                                     <div>
                                         <p>{experience.companyName}</p>
@@ -62,9 +62,8 @@ export default function ExperienceAndEducation () {
                             className="flex flex-col gap-5">
                                 <div className="flex flex-row gap-4">
                                     <div className="w-15 h-15 rounded-full overflow-hidden">
-                                        <img className="h-full w-full object-cover"
-                                            src={education.instituteLogo}>                                
-                                        </img>
+                                        <Image className="h-full w-full object-cover"
+                                            src={education.instituteLogo} alt ="logo"/> 
                                     </div>
                                     <div>
                                         <p>{education.institureName}</p>
