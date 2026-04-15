@@ -8,8 +8,7 @@ export default function NameReveal(){
 
     return(
         <>
-
-            <h1 className="group inline-flex flex-wrap items-center">
+            <h1 className="group inline-flex flex-wrap items-center text-[2.5rem]">
 
               <span className="inline-flex items-center">
 

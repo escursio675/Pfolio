@@ -10,8 +10,8 @@ export default function ExperienceAndEducation () {
 
     const [showEducation, setshowEducation] = useState(false);   //false if Experience is selected
 
-    const unselectedStyle: string = "text-[#cdd6f4] bg-black filter hover:brightness-150 focus:outline-none";
-    const selectedStyle: string = "bg-[#cdd6f4] text-black transition duration-200 ease-in-out";
+    const unselectedStyle: string = "bg-[#cdd6f4] text-black transition duration-200 ease-in-out";
+    const selectedStyle: string = "text-[#cdd6f4] bg-black  focus:outline-none";
 
 
     return(
@@ -20,15 +20,16 @@ export default function ExperienceAndEducation () {
 
             <div className="w-full mt-[2rem] flex justify-center flex-col">
 
-                <div className="flex gap-[2vw] justify-center w-full mb-7">
+                <div className="flex justify-center w-full h-8 mb-7 rounded-lg
+                bg-[#cdd6f4]">
                     <button onClick={() => setshowEducation(false)}
-                    className={`xl:px-4 xl:py-1 xl:rounded-lg px-3 py-1 rounded-md
+                    className={`xl:px-5 xl:py-1 xl:rounded-lg px-3 py-1 m-0.5 rounded-md flex-1
                         focus:outline-none focus:ring-2 focus:ring-[#cdd6f4]
                         ${showEducation ? unselectedStyle : selectedStyle}`}>
                         Experience
                     </button>
                     <button onClick={() => setshowEducation(true)}
-                    className={`xl:px-5 xl:py-1 xl:rounded-lg px-3 py-1 rounded-md
+                    className={`xl:px-5 xl:py-1 xl:rounded-lg px-3 py-1 m-0.5 rounded-md flex-1
                         focus:outline-none focus:ring-2 focus:ring-[#cdd6f4]
                         ${showEducation ? selectedStyle : unselectedStyle}`}>
                         Education
@@ -41,17 +42,20 @@ export default function ExperienceAndEducation () {
                         {!showEducation && experiences.map((experience: Experience) => (
                             <div key={experience.id}
                             className="flex flex-col gap-5">
-                                <div className="flex flex-row gap-4">
-                                    <div className="w-15 h-15 rounded-full overflow-hidden">
+                                <div className="flex relative
+                                xl:flex-row xl:gap-4 gap-7">
+                                    <div className="xl:w-15 xl:h-15 h-15 w-15 xl:mt-0
+                                    rounded-full flex-shrink-0 mt-10
+                                    overflow-hidden">
                                         <Image className="h-full w-full object-cover"
                                             src={experience.companyLogo} alt="logo"/>                                
                                     </div>
-                                    <div>
-                                        <p>{experience.companyName}</p>
-                                        <p>{experience.role}</p>
+                                    <div className="mt-7 mb-1 xl:mt-0 xl:mb-0">
+                                        <h1>{experience.companyName}</h1>
+                                        <h2>{experience.role}</h2>
                                         <p>{experience.description}</p>
                                     </div>
-                                    <p className="ml-auto">{experience.startDate} to {experience.endDate}</p>
+                                    <p className="ml-auto absolute top-0 left-0 xl:static">{experience.startDate} to {experience.endDate}</p>
                                 </div>
                             </div>
                         ))
@@ -60,17 +64,20 @@ export default function ExperienceAndEducation () {
                         {showEducation && educations.map((education: Education) => (
                             <div key={education.id}
                             className="flex flex-col gap-5">
-                                <div className="flex flex-row gap-4">
-                                    <div className="w-15 h-15 rounded-full overflow-hidden">
+                                <div className="flex relative
+                                xl:flex-row xl:gap-4 gap-7">
+                                    <div className="xl:w-15 xl:h-15 h-15 w-15 xl:mt-0
+                                    rounded-full flex-shrink-0 mt-10
+                                    overflow-hidden">
                                         <Image className="h-full w-full object-cover"
                                             src={education.instituteLogo} alt ="logo"/> 
                                     </div>
-                                    <div>
-                                        <p>{education.institureName}</p>
-                                        <p>{education.degree}</p>
+                                    <div className="mt-7 mb-1 xl:mt-0 xl:mb-0">
+                                        <h1>{education.instituteName}</h1>
+                                        <h2>{education.degree}</h2>
                                         <p>{education.grades}</p>
                                     </div>
-                                    <p className="ml-auto">{education.startDate} to {education.endDate}</p>
+                                    <p className="ml-auto absolute top-0 left-0 xl:static">{education.startDate} to {education.endDate}</p>
                                 </div>
                             </div>
                         ))

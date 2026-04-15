@@ -6,15 +6,17 @@ body{
 }
 
 h1{
-    color: hsl(226, 64%, 88%);
+    color: #cdd6f4;
     font-weight: bold;
-    font-size: 2.5rem;
     
 }
 
+h2{
+  color: #689bec;
+}
+
 p{
-    color: hsl(219, 18%, 80%);
-    font-size: 1rem;
+    color: #c3c9d5;
     text-align: justify;
 }
 
@@ -38,5 +40,17 @@ p{
 ::-webkit-scrollbar-thumb:hover {
   background: #689bec;
 }
+
+::selection {
+  background-color: #689bec; /* highlight */
+  color: #1e1e2e;           /* text color */
+}
+
+/*
+light blue: #cdd6f4
+bright blue: #689bec
+deep blue: #1e1e2e
+grey: #c3c9d5
+*/
 
 

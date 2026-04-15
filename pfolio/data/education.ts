@@ -5,7 +5,7 @@ import { StaticImageData } from "next/image";
 export type Education = {
     id: number,
     instituteLogo: StaticImageData;
-    institureName: string;
+    instituteName: string;
     degree: string;
     grades: string;
     startDate: string;
@@ -16,7 +16,7 @@ export const educations: Education[] = [
 {
     id: 1,
     instituteLogo: jec,
-    institureName: "Jorhat Engineering College",
+    instituteName: "Jorhat Engineering College",
     degree: "Bachelor's in Technology, Computer Science and Engineering",
     grades: "9.7 CGPA",
     startDate: "Oct 2023",
@@ -26,7 +26,7 @@ export const educations: Education[] = [
 {
     id: 2,
     instituteLogo: jec,
-    institureName: "Jorhat Engineering College",
+    instituteName: "Jorhat Engineering College",
     degree: "Bachelor's in Technology, Computer Science and Engineering",
     grades: "9.7 CGPA",
     startDate: "Oct 2023",

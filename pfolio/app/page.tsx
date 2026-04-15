@@ -10,7 +10,7 @@ export default function Home(){
 
       <NameReveal />
 
-      <p className="xl:max-w-[43vw] max-w-full xl:mt-[1vh]"> {intro}</p>
+      <p className="xl:max-w-[43vw] max-w-full xl:mt-[1vh] text-[1rem]"> {intro}</p>
 
       <ExperienceAndEducation />
     
