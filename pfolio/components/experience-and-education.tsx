@@ -1,6 +1,6 @@
 "use client";
 
-import {Experience, experiences} from "@/data/experience";
+import { Experience, experiences } from "@/data/experience";
 import { Education, educations } from "@/data/education";
 
 import {useState} from "react";
