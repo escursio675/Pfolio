@@ -1,6 +1,6 @@
 "use client";
 
-import {Experience, experiences} from "@/data/experience";
+import { Experience, experiences } from "@/data/experience";
 import { Education, educations } from "@/data/education";
 
 import {useState} from "react";
@@ -16,9 +16,8 @@ export default function ExperienceAndEducation () {
 
     return(
         <>
-        {/*dont forget to check resonsiveness */}
 
-            <div className="w-full mt-[2rem] flex justify-center flex-col">
+            <div className="w-full mt-10 flex justify-center flex-col">
 
                 <div className="flex justify-center w-full h-8 mb-7 rounded-lg
                 bg-[#cdd6f4]">
