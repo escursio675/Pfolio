@@ -1,6 +1,7 @@
 import NameReveal from "@/components/name-reveal"
 import ExperienceAndEducation from "@/components/experience-and-education"
 import Socials from "@/components/socials"
+import Projects from "@/components/projects"
 
 import { intro } from "@/data/text"
 
@@ -16,6 +17,8 @@ export default function Home(){
       <Socials />
 
       <ExperienceAndEducation />
+
+      <Projects />
     
     
     </>
