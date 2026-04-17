@@ -1,8 +1,5 @@
-"use client";
+import { Project, projects, Techstack } from "@/data/project"
 
-import { Project, projects } from "@/data/project"
-
-import { useState } from "react"
 import Image from "next/image"
 
 
@@ -12,7 +9,70 @@ export default function Projects(){
             <div className="w-full mt-10">
                 <h1 className="text-[2.5rem]">Projects</h1>
                 <div className="w-full h-[90%] grid xl:grid-cols-2 grid-cols-1 gap-6">
-                    <div className="bg-[#2a2f45] w-full h-ful rounded-lg">
+                    {
+                        projects.map((project: Project) => (
+                            <div key={project.id}
+                            className="bg-[#2a2f45] w-full h-full rounded-lg">
+
+                                <div className="w-full overflow-hidden">
+                                    <Image
+                                    src={project.ss}
+                                    alt="project"
+                                    width={800}
+                                    height={400}
+                                    className="object-cover w-full h-auto p-1 rounded-lg"
+                                    />
+
+                                    <h1 className="m-3">{project.title}</h1>
+
+                                    <div className="text-[#1e1e2e] flex flex-wrap gap-3 m-3">
+                                        {project.techstack.map((technology: Techstack) => (
+                                            <p key={technology.tech}
+                                            className={`xl:rounded-lg rounded-md
+                                            px-2 py-1
+                                            shadow-[0_0_8px_#8fb3ff]`}
+                                            style={{backgroundColor: technology.hue}}>
+                                                {technology.tech}
+                                            </p>
+                                        ))}
+                                        
+                                    </div>
+
+                                    <p className="m-3">{project.description}</p>
+
+                                    <div className="text-[#c3c9d5] flex gap-3 m-3">
+
+                                        {project.github && 
+                                        <a href={project.github} target="_blank" rel="noopener noreferrer"
+                                        className="xl:rounded-lg rounded-md
+                                        px-2 py-1 bg-[#1e1e2e]
+                                        transition-all duration-150 ease-out hover:text-black hover:bg-[#cdd6f4]">
+                                            Github
+                                        </a>}
+
+                                        {project.live &&
+                                        <a href={project.live} target="_blank" rel="noopener noreferrer"
+                                        className="xl:rounded-lg rounded-md
+                                        px-2 py-1 bg-[#1e1e2e]
+                                        transition-all duration-150 ease-out hover:text-black hover:bg-[#cdd6f4]">
+                                            Live Preview
+                                        </a>}
+
+                                    </div>                            
+                                </div>
+                            </div>
+                        ))
+                    }
+                    
+                </div>
+            </div>
+        </>
+    )
+}
+
+
+{/*
+    <div className="bg-[#2a2f45] w-full h-ful rounded-lg">
                         <div className="w-full  overflow-hidden">
                             <Image
                             src="/lofe.png"
@@ -50,10 +110,4 @@ export default function Projects(){
                             </div>                            
                         </div>
                     </div>
-                    
-
-                </div>
-            </div>
-        </>
-    )
-}
+*/}
