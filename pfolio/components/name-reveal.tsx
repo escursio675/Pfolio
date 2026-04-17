@@ -13,7 +13,7 @@ export default function NameReveal(){
               <span className="inline-flex items-center">
 
                 <span aria-hidden="true">
-                  Heyo!&nbsp;
+                  Hello!&nbsp;
                   <span className="text-[#689bec] inline-flex flex-wrap">Abhiman
                     <button onClick={() => {setmobileReveal(v => !v)}}
                       className=" xl:hidden inline underline decoration-dashed decoration-accent/30 text-[#5983c7] ml-1">

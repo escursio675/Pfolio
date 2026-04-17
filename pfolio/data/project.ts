@@ -12,6 +12,8 @@ export type Project = {
     title: string;
     techstack: Techstack[];
     description: string;
+    github: string;
+    live: string;
 };
 
 const LOFeTech: Techstack[] = [
@@ -25,28 +27,37 @@ export const projects: Project[] = [
     ss: lofe,
     title: "LOFe",
     techstack: LOFeTech,
-    description: "Sicks tunes"
+    description: "Sicks tunes",
+    github: "https://www.github.com",
+    live: "https://www.google.com"
+
     
 },
 {
     ss: lofe,
     title: "LOFe",
     techstack: LOFeTech,
-    description: "Sicks tunes"
+    description: "Sicks tunes",
+    github: "https://www.github.com",
+    live: "https://www.google.com"
     
 },
 {
     ss: lofe,
     title: "LOFe",
     techstack: LOFeTech,
-    description: "Sicks tunes"
+    description: "Sicks tunes",
+    github: "https://www.github.com",
+    live: "https://www.google.com"
     
 },
 {
     ss: lofe,
     title: "LOFe",
     techstack: LOFeTech,
-    description: "Sicks tunes"
+    description: "Sicks tunes",
+    github: "https://www.github.com",
+    live: "https://www.google.com"
     
 }
 ]
