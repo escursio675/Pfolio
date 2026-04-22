@@ -16,9 +16,13 @@ export default function Home(){
 
       <Socials />
 
-      <ExperienceAndEducation />
+      <div className="xl:pl-[15%]">
 
-      <Projects />
+        <ExperienceAndEducation />
+
+        <Projects />
+
+      </div>
     
     
     </>
