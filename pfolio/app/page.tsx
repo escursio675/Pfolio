@@ -21,7 +21,7 @@ export default function Home(){
 
         <ExperienceAndEducation />
 
-        <Techstack />
+        <Techstack/>
 
         <Projects />
 

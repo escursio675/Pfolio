@@ -9,7 +9,8 @@ export default function RootLayout({
     <html lang="en">
       <body>
         
-        <div className="flex h-screen xl:items-start flex-col xl:w-[60%]
+        <div className="flex flex-col
+        h-screen xl:items-start xl:w-[60%]
         xl:mt-[10%] xl:ml-[15%]
         items-start m-[10%]">
           {children}
