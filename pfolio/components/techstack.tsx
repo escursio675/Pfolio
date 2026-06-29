@@ -5,7 +5,7 @@ import Image from "next/image"
 export default function Techstack(){
     return(
         <>
-            <div className="w-full xl:mt-20 xl:mb-20 mt-5">
+            <div className="w-full xl:mt-20 xl:mb-20 mt-15">
                 <h1 className="text-[2.5rem]">My Techstack</h1>
                 <div className="mt-5
                 flex flex-row flex-wrap gap-5 xl:justify-between">

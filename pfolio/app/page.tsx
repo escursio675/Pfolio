@@ -3,6 +3,7 @@ import ExperienceAndEducation from "@/components/experience-and-education"
 import Socials from "@/components/socials"
 import Projects from "@/components/projects"
 import Techstack from "@/components/techstack"
+import ToolBox from "@/components/tool-box"
 
 import { intro } from "@/data/text"
 
@@ -21,9 +22,11 @@ export default function Home(){
 
         <ExperienceAndEducation />
 
+        <Projects />
+
         <Techstack/>
 
-        <Projects />
+        <ToolBox/>
 
       </div>
     
