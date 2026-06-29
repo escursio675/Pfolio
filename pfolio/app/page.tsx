@@ -4,6 +4,7 @@ import Socials from "@/components/socials"
 import Projects from "@/components/projects"
 import Techstack from "@/components/techstack"
 import ToolBox from "@/components/tool-box"
+import Glance from "@/components/glance"
 
 import { intro } from "@/data/text"
 
@@ -27,6 +28,8 @@ export default function Home(){
         <Techstack/>
 
         <ToolBox/>
+
+        <Glance/>
 
       </div>
     

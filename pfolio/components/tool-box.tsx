@@ -6,7 +6,7 @@ export default function ToolBox(){
     return(
         <div className="mt-15">
             <h1 className="text-[2.5rem]">My Tool Box</h1>
-            <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden">
+            <div className="relative flex h-[400px] w-full flex-col items-center justify-center overflow-hidden">
                 <OrbitingCircles iconSize={35} path={true} speed={0.5}>
                     <CodeIcon className="w-10 h-10"/>
                     <PostmanIcon className="w-10 h-10"/>
