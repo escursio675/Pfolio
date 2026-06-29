@@ -1,5 +1,29 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import { Map, NavigationControl } from "maplibre-gl";
+import "maplibre-gl/dist/maplibre-gl.css";
+
 
 export default function Glance() {
+
+    const mapContainer = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (!mapContainer.current) return;
+
+        const map = new Map({
+        container: mapContainer.current,
+        style: `https://maps.geoapify.com/v1/styles/positron-blue/style.json?apiKey=${process.env.NEXT_PUBLIC_GEOAPIFY_API_KEY}`,
+        center: [94.2037, 26.7509], // Jorhat
+        zoom: 10,
+        });
+
+        map.addControl(new NavigationControl());
+
+        return () => map.remove();
+    }, []);
+
     return(
         <div className="mt-2">
             <h1 className="text-[2.5rem]">At a Glance</h1>
@@ -45,7 +69,9 @@ export default function Glance() {
 
                 <div className="border-2 border-[#689bec] rounded-lg w-full
                 xl:h-[30vh] h-[25vh]">
-                    Location
+                    <div ref={mapContainer} className='w-full h-full'>
+
+                    </div>
                 </div>
 
 
