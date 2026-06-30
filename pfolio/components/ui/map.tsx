@@ -28,8 +28,11 @@ if (!mapContainer.current) return;
     return(
         <div className="w-full h-full">
             <div>Currently Based In:</div>
-            <div ref={mapContainer} className='xl:w-full xl:h-[20em] w-[19em] h-[12em] 
-            rounded-lg'></div>
+            <div>
+                <div ref={mapContainer} className='xl:w-full xl:h-[20em] w-[19em] h-[12em] 
+                rounded-lg'>
+                </div>
+            </div>
         </div>
     )
 }
