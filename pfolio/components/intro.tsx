@@ -13,10 +13,15 @@ export default function Intro(){
             className="underline decoration-dashed decoration-accent/30 underline-offset-3 text-[#689bec]
             hover:text-black hover:bg-[#689bec] hover:decoration-accent/1 transition-all">
                 MERN
-            </a>&nbsp;and 
-            Embedded Systems. 
+            </a>&nbsp;and&nbsp;
+
+            <a href="https://www.arm.com/glossary/embedded-system-design" target="_blank" rel="noopener noreferrer"
+            className="underline decoration-dashed decoration-accent/30 underline-offset-3 text-[#689bec]
+            hover:text-black hover:bg-[#689bec] hover:decoration-accent/1 transition-all">
+                Embedded Systems.
+            </a> 
             
-            I like to work with computers and other people that like to work 
+            &nbsp;I like to work with computers and other people that like to work 
             with computers :D
         </p>
     )

@@ -10,7 +10,6 @@ export type Experience = {
     startDate: string;
     endDate: string;
     role: string;
-    link: string;
 };
 
 export const experiences: Experience[] = [
@@ -18,22 +17,20 @@ export const experiences: Experience[] = [
     id: 1,
     companyName: "IOCL, Digboi",
     companyLogo: iocl,
-    description: "Worked in a team as winter intern",
+    description: "Worked in a team to create a Fullstack web application using the MERN stack for automation of the process of granting security clearance to certain personnel of the industry.",
     startDate: "Jan 2025",
     endDate: "Jan 2025",
-    role: "Fullstack Developer",
-    link: "https://www.google.com"
+    role: "Winter Intern - Fullstack Developer"
 },
 
 {
     id: 2,
-    companyName: "IOCL, Digboi",
+    companyName: "Indian Institute of Technology, Guwahati",
     companyLogo: iitg,
-    description: "Worked in a team as winter intern",
+    description: "Worked in a team to perform a comparative study of various CNN+RNN architectures targeted for Automatic Image Captioning using various standard techiniques including those of measurement of performance metrics",
     startDate: "June 2025",
     endDate: "Aug 2025",
-    role: "Fullstack Developer",
-    link: "https://www.google.com"
+    role: "Summer Intern - Automatic Image Captioning"
 }
 
 ]

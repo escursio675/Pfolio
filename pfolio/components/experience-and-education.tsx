@@ -41,7 +41,7 @@ export default function ExperienceAndEducation () {
                         {!showEducation && experiences.map((experience: Experience) => (
                             <div key={experience.id}
                             className="flex flex-col gap-5">
-                                <div className="flex relative
+                                <div className="flex relative xl:pt-8
                                 xl:flex-row xl:gap-4 gap-7">
                                     <div className="xl:w-15 xl:h-15 h-15 w-15 xl:mt-0
                                     rounded-full flex-shrink-0 mt-10
@@ -52,9 +52,9 @@ export default function ExperienceAndEducation () {
                                     <div className="mt-7 mb-1 xl:mt-0 xl:mb-0">
                                         <h1>{experience.companyName}</h1>
                                         <h2>{experience.role}</h2>
-                                        <p>{experience.description}</p>
+                                        <p className="text-justify">{experience.description}</p>
                                     </div>
-                                    <p className="ml-auto absolute top-0 left-0 xl:static">{experience.startDate} to {experience.endDate}</p>
+                                    <p className="ml-auto absolute top-0 left-0 ">{experience.startDate} to {experience.endDate}</p>
                                 </div>
                             </div>
                         ))
@@ -63,7 +63,7 @@ export default function ExperienceAndEducation () {
                         {showEducation && educations.map((education: Education) => (
                             <div key={education.id}
                             className="flex flex-col gap-5">
-                                <div className="flex relative
+                                <div className="flex relative xl:pt-8
                                 xl:flex-row xl:gap-4 gap-7">
                                     <div className="xl:w-15 xl:h-15 h-15 w-15 xl:mt-0
                                     rounded-full flex-shrink-0 mt-10
@@ -76,7 +76,7 @@ export default function ExperienceAndEducation () {
                                         <h2>{education.degree}</h2>
                                         <p>{education.grades}</p>
                                     </div>
-                                    <p className="ml-auto absolute top-0 left-0 xl:static">{education.startDate} to {education.endDate}</p>
+                                    <p className="ml-auto absolute top-0 left-0">{education.startDate} to {education.endDate}</p>
                                 </div>
                             </div>
                         ))
