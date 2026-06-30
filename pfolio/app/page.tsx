@@ -1,4 +1,5 @@
 import NameReveal from "@/components/name-reveal"
+import Intro from "@/components/intro"
 import ExperienceAndEducation from "@/components/experience-and-education"
 import Socials from "@/components/socials"
 import Projects from "@/components/projects"
@@ -6,7 +7,6 @@ import Techstack from "@/components/techstack"
 import ToolBox from "@/components/tool-box"
 import Glance from "@/components/glance"
 
-import { intro } from "@/data/text"
 
 export default function Home(){
 
@@ -15,7 +15,7 @@ export default function Home(){
 
       <NameReveal />
 
-      <p className="xl:max-w-[43vw] max-w-full xl:mt-[1vh] text-[1rem]"> {intro}</p>
+      <Intro/>
 
       <Socials />
 

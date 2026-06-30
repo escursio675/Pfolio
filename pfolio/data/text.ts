@@ -1,2 +1,0 @@
-export const intro: string = `Currently in my 4th year of Bachelor's in Computer Science and Engineering
- @JEC, Assam. My domains of interest include Fullstack Development w/ MERN and Embedded Systems. I like to work with computers and other people that like to work with computers :D`
