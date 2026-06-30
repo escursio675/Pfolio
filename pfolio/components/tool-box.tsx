@@ -2,25 +2,92 @@ import { AWSIcon, BashIcon, ClaudeIcon, CodeIcon, FigmaIcon, NeovimIcon, Obsidia
 
 import { OrbitingCircles } from "@/components/ui/orbiting-circles"
 
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card"
+
 export default function ToolBox(){
     return(
         <div className="mt-15">
             <h1 className="text-[2.5rem]">My Tool Box</h1>
             <div className="relative flex h-[400px] w-full flex-col items-center justify-center overflow-hidden">
                 <OrbitingCircles iconSize={35} path={true} speed={0.5}>
-                    <CodeIcon className="w-10 h-10"/>
-                    <PostmanIcon className="w-10 h-10"/>
-                    <Icons.notion />
-                    <NeovimIcon className="w-10 h-10"/>
-                    <Icons.gitHub />
-                    <BashIcon className="w-10 h-10"/>
+
+                    <HoverCard openDelay={70} closeDelay={70}>
+                    <HoverCardTrigger><CodeIcon className="w-10 h-10"/></HoverCardTrigger>
+                    <HoverCardContent>
+                        VSCode
+                    </HoverCardContent>
+                    </HoverCard>
+
+                    <HoverCard openDelay={70} closeDelay={70}>
+                    <HoverCardTrigger><PostmanIcon className="w-10 h-10"/></HoverCardTrigger>
+                    <HoverCardContent>
+                        Postman
+                    </HoverCardContent>
+                    </HoverCard>
+
+                    <HoverCard openDelay={70} closeDelay={70}>
+                    <HoverCardTrigger><Icons.notion /></HoverCardTrigger>
+                    <HoverCardContent>
+                        Notion
+                    </HoverCardContent>
+                    </HoverCard>
+
+                    <HoverCard openDelay={70} closeDelay={70}>
+                    <HoverCardTrigger><NeovimIcon className="w-10 h-10"/></HoverCardTrigger>
+                    <HoverCardContent>
+                        Neovim
+                    </HoverCardContent>
+                    </HoverCard>
+
+                    <HoverCard openDelay={70} closeDelay={70}>
+                    <HoverCardTrigger><Icons.gitHub /></HoverCardTrigger>
+                    <HoverCardContent>
+                        GitHub
+                    </HoverCardContent>
+                    </HoverCard>
+
+                    <HoverCard openDelay={70} closeDelay={70}>
+                    <HoverCardTrigger><BashIcon className="w-10 h-10"/></HoverCardTrigger>
+                    <HoverCardContent>
+                        Bash
+                    </HoverCardContent>
+                    </HoverCard>
                     
                 </OrbitingCircles>
                 <OrbitingCircles iconSize={35} radius={100} reverse speed={0.3}>
-                    <ClaudeIcon className="w-10 h-10"/>
-                    <AWSIcon className="w-10 h-10"/>
-                    <ObsidianIcon className="w-10 h-10"/>
-                    <FigmaIcon className="w-10 h-10"/>
+
+                    <HoverCard openDelay={70} closeDelay={70}>
+                    <HoverCardTrigger><ClaudeIcon className="w-10 h-10"/></HoverCardTrigger>
+                    <HoverCardContent>
+                        Claude
+                    </HoverCardContent>
+                    </HoverCard>
+
+                    <HoverCard openDelay={70} closeDelay={70}>
+                    <HoverCardTrigger><AWSIcon className="w-10 h-10"/></HoverCardTrigger>
+                    <HoverCardContent>
+                        Amazon Web Services
+                    </HoverCardContent>
+                    </HoverCard>
+
+                    <HoverCard openDelay={70} closeDelay={70}>
+                    <HoverCardTrigger><ObsidianIcon className="w-10 h-10"/></HoverCardTrigger>
+                    <HoverCardContent>
+                        Obsidian
+                    </HoverCardContent>
+                    </HoverCard>
+
+                    <HoverCard openDelay={70} closeDelay={70}>
+                    <HoverCardTrigger><FigmaIcon className="w-10 h-10"/></HoverCardTrigger>
+                    <HoverCardContent>
+                        Figma
+                    </HoverCardContent>
+                    </HoverCard>
+
                 </OrbitingCircles>
             </div>
         </div>
@@ -29,14 +96,14 @@ export default function ToolBox(){
 
 const Icons = {
   gitHub: () => (
-    <svg viewBox="0 0 24 24" className={`w-100 h-100 fill-current`}>
+    <svg viewBox="0 0 24 24" className={`w-10 h-10 fill-current`}>
       <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
     </svg>
   ),
   notion: () => (
     <svg
-      width="100"
-      height="100"
+      width="40"
+      height="40"
       viewBox="0 0 100 100"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
