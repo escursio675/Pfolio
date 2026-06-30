@@ -1,5 +1,7 @@
 import { Project, projects, Techstack } from "@/data/project"
 
+import { GitHubIcon } from "@/icons/socials-icons"
+
 import Image from "next/image"
 
 
@@ -28,31 +30,34 @@ export default function Projects(){
                                     <div className="text-[#1e1e2e] flex flex-wrap gap-3 m-3">
                                         {project.techstack.map((technology: Techstack) => (
                                             <p key={technology.tech}
-                                            className={`xl:rounded-lg rounded-md
-                                            px-2 py-1
-                                            shadow-[0_0_8px_#8fb3ff]`}
-                                            style={{backgroundColor: technology.hue}}>
+                                            className={`xl:rounded-md rounded-md border-2 text-xs
+                                            px-1 py-1`}
+                                            style={{backgroundColor: `${technology.hue}20`,
+                                            borderColor: technology.hue,
+                                            color: technology.hue
+
+                                            }}>
                                                 {technology.tech}
                                             </p>
                                         ))}
                                         
                                     </div>
 
-                                    <p className="m-3">{project.description}</p>
+                                    <p className="ml-3">{project.description}</p>
 
                                     <div className="text-[#c3c9d5] flex gap-3 m-3">
 
                                         {project.github && 
                                         <a href={project.github} target="_blank" rel="noopener noreferrer"
-                                        className="xl:rounded-lg rounded-md
-                                        px-2 py-1 bg-[#1e1e2e]
+                                        className="xl:rounded-full rounded-md
+                                        px-1 py-1 bg-[#1e1e2e]
                                         transition-all duration-150 ease-out hover:text-black hover:bg-[#cdd6f4]">
-                                            Github
+                                            <GitHubIcon/>
                                         </a>}
 
                                         {project.live &&
                                         <a href={project.live} target="_blank" rel="noopener noreferrer"
-                                        className="xl:rounded-lg rounded-md
+                                        className="xl:rounded-md rounded-xs
                                         px-2 py-1 bg-[#1e1e2e]
                                         transition-all duration-150 ease-out hover:text-black hover:bg-[#cdd6f4]">
                                             Live Preview
