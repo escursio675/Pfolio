@@ -1,6 +1,7 @@
 import { Project, projects, Techstack } from "@/data/project"
 
 import { GitHubIcon } from "@/icons/socials-icons"
+import globe from "@/public/globe.svg"
 
 import Image from "next/image"
 
