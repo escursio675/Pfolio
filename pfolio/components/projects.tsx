@@ -22,6 +22,7 @@ export default function Projects(){
                                     alt="project"
                                     width={800}
                                     height={400}
+                                    placeholder="blur"
                                     className="object-cover w-full h-auto p-1 rounded-lg"
                                     />
 
@@ -43,7 +44,7 @@ export default function Projects(){
                                         
                                     </div>
 
-                                    <p className="ml-3">{project.description}</p>
+                                    <p className="ml-3 mr-3">{project.description}</p>
 
                                     <div className="text-[#c3c9d5] flex gap-3 m-3">
 
