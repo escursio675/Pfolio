@@ -40,8 +40,7 @@ const cardData: BentoCardProps[] = [
     color: '#120F17',
     children: (
       <div>
-        <div>Analytics</div>
-        <div>Dashboard</div>
+        <div>WIP</div>
       </div>
     )
   },
@@ -55,11 +54,7 @@ const cardData: BentoCardProps[] = [
   },
   {
     color: '#120F17',
-    children: <div>Integration</div>
-  },
-  {
-    color: '#120F17',
-    children: <div>Security</div>
+    children: <div>WIP</div>
   }
 ];
 
@@ -685,7 +680,7 @@ const MagicBento: React.FC<BentoProps> = ({
       <BentoCardGrid gridRef={gridRef}>
         <div className="card-responsive grid gap-2">
           {cardData.map((card, index) => {
-            const baseClassName = `card flex flex-col justify-between relative aspect-[4/3] min-h-[200px] w-full max-w-full p-5 rounded-[20px] border border-solid font-light overflow-hidden transition-colors duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] ${
+            const baseClassName = `card flex flex-col justify-between relative lg:h-[20vh] xl:h-[20vh] lg:w-[25vw] xl:w-[20vw] p-5 rounded-[20px] border border-solid font-light overflow-hidden transition-colors duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] ${
               enableBorderGlow ? 'card--border-glow' : ''
             }`;
 

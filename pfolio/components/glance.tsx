@@ -3,8 +3,7 @@ import MagicBento from "./ui/MagicBento"
 export default function Glance() {
 
     return(
-        <div className="mt-2">
-            <h1 className="text-[2.5rem]">At a Glance</h1>
+        <div className="mt-20">
             <MagicBento 
             textAutoHide={true}
             enableStars
