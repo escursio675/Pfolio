@@ -60,7 +60,7 @@ export default function Socials(){
                         hover:text-[#689bec] transition duration-150 ease-in" />
                     </a>
 
-                    <a href="https://x.com/yu_workss" target="_blank" rel="noopener noreferrer"
+                    <a href="https://x.com/_yukinik" target="_blank" rel="noopener noreferrer"
                     aria-label="Twitter">
                         <XIcon className="text-[#c3c9d5] mt-[1.2rem] 
                         hover:text-[#689bec] transition duration-150 ease-in" />
