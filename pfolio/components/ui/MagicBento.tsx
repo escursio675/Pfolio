@@ -5,6 +5,7 @@ import { gsap } from 'gsap';
 
 import Location from './map';
 import Languages from './languages';
+import ClickCounter from './click-counter';
 
 export interface BentoCardProps {
   color?: string;
@@ -38,11 +39,7 @@ const MOBILE_BREAKPOINT = 768;
 const cardData: BentoCardProps[] = [
   {
     color: '#120F17',
-    children: (
-      <div>
-        <div>WIP</div>
-      </div>
-    )
+    children: <ClickCounter />
   },
   {
     color: '#120F17',
