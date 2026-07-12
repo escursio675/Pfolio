@@ -51,7 +51,7 @@ const cardData: BentoCardProps[] = [
   },
   {
     color: '#120F17',
-    children: <div>WIP</div>
+    children: <div>Coming Soon</div>
   }
 ];
 

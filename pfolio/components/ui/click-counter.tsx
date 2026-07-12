@@ -2,6 +2,12 @@
 
 import { useState, useEffect } from "react";
 
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card"
+
 export default function ClickCounter(){
 
     const [thisSessionClicks, setThisSessionsClicks] = useState(0);
@@ -50,7 +56,21 @@ export default function ClickCounter(){
         <div className="w-full h-full text-black text-center
         flex flex-col justify-center items-center gap-2">
 
-            <p className="text-[1.2rem] text-[#cdd6f4]">Total Clicks: {(totalClicks === 0)? "Loading": totalClicks}</p>
+            <HoverCard openDelay={70} closeDelay={70}>
+                <HoverCardTrigger>
+                    <button className="text-white text-sm absolute top-1/20 right-1/35 h-6 w-6
+                    hover:bg-[#cdd6f4] hover:text-black transition-all rounded-full">
+                        i
+                    </button>
+                </HoverCardTrigger>
+                <HoverCardContent side="top" className="max-w-xs">
+                    This click counter utilizes the CounterAPI made to keep track of various counts across my multiple websites. Simple, yet essential. Check out more details in the Projects section.
+                </HoverCardContent>
+            </HoverCard>
+
+            <p className="text-[1.2rem] text-[#cdd6f4]">
+                    Total Clicks: {(totalClicks === 0)? "Loading": totalClicks}
+            </p>
 
             <button onClick={() => {
                 setThisSessionsClicks(v => v + 1);
