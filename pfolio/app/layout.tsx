@@ -2,6 +2,13 @@ import './globals.css';
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Abhimanyu Saikia",
+  description: "Portfolio website for someone who really likes computers",
+};
+
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 
@@ -12,6 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={cn("font-sans", geist.variable)}>
+      <head>
+        <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+      </head>
       <body>
         
         <div className="flex flex-col
