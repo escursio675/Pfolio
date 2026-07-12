@@ -4,6 +4,7 @@ import lofe from "@/public/lofe.webp"
 import urlambda from "@/public/urlambda.webp"
 import rados from "@/public/rados.webp"
 import clock from "@/public/clock.webp"
+import counterapi from "@/public/counterapi.webp"
 
 export type Techstack = {
     tech: string;
@@ -43,6 +44,15 @@ export const projects: Project[] = [
 },
 {
     id: 3,
+    ss: counterapi,
+    title: "CounterAPI",
+    techstack: [{tech: "Web Development", hue: "#7dc4e4"}, {tech: "MERN", hue: "#8d95ef"}, {tech: "REST API", hue: "#8d95ef"}, {tech: "CRUD", hue: "#8d95ef"}, {tech: "Authentication", hue: "#8bd5a3"}],
+    description: "A lightweight REST API for tracking custom counters across multiple personal websites, with per-site API keys, rate-limiting and admin-managed site provisioning",
+    github: "https://github.com/escursio675/CounterAPI"
+    
+},
+{
+    id: 4,
     ss: lofe,
     title: "LOFe",
     techstack: [{tech: "Web Development", hue: "#7dc4e4"}, {tech: "UI/UX", hue: "#cba6f7"}, {tech: "REST API", hue: "#8d95ef"}, {tech: "Productivity", hue: "#8bd5a3"}, {tech: "Multimedia", hue: "#8bd5a3"}],
@@ -53,7 +63,7 @@ export const projects: Project[] = [
 },
 
 {
-    id: 4,
+    id: 5,
     ss: clock,
     title: "ClOCK",
     techstack: [{tech: "Web Development", hue: "#7dc4e4"}, {tech: "UI/UX", hue: "#cba6f7"}, {tech: "Animations", hue: "#9f8cff"}, {tech: "Productivity", hue: "#8bd5a3"}],
