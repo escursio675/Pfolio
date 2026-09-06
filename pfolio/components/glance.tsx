@@ -14,7 +14,7 @@ export default function Glance() {
             clickEffect
             spotlightRadius={400}
             particleCount={12}
-            glowColor="132, 0, 255"
+            glowColor="104, 155, 236"
             disableAnimations
             />
         </div>

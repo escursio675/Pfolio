@@ -6,83 +6,97 @@ import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from "@/components/ui/hover-card"
+} from "@/components/ui/hover-card";
 
-export default function ClickCounter(){
+export default function ClickCounter() {
+  const [thisSessionClicks, setThisSessionClicks] = useState(0);
+  const [totalClicks, setTotalClicks] = useState<number | null>(null);
+  const [error, setError] = useState(false);
 
-    const [thisSessionClicks, setThisSessionsClicks] = useState(0);
-    const [totalClicks, setTotalClicks] = useState<number>(0);
+  const API_KEY: string | undefined = process.env.NEXT_PUBLIC_COUNTER_API_KEY;
 
-    const API_KEY: string | undefined = process.env.NEXT_PUBLIC_COUNTER_API_KEY;
+  const getClicksValue = async () => {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_COUNTER_API_BASE}/api/counters/${process.env.NEXT_PUBLIC_COUNTER_NAME}`,
+      { headers: { "x-api-key": API_KEY as string } }
+    );
+    if (!response.ok) throw new Error("Failed to fetch count");
+    const data = await response.json();
+    return data.value;
+  };
 
-    if(!API_KEY){
-        throw new Error("NEXT_PUBLIC_API_KEY is not set");
-    }
-
-    const getClicksValue = async() => {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_COUNTER_API_BASE}/api/counters/${process.env.NEXT_PUBLIC_COUNTER_NAME}`, {
-                headers: { 'x-api-key': API_KEY}
-            });
-
-            const data = await response.json();
-            return data.value;
-        };
-
-    const handleIncrement = async () => {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_COUNTER_API_BASE}/api/counters/${process.env.NEXT_PUBLIC_COUNTER_NAME}/increment`, {
+  const handleIncrement = async () => {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_COUNTER_API_BASE}/api/counters/${process.env.NEXT_PUBLIC_COUNTER_NAME}/increment`,
+      {
         method: "PATCH",
         headers: {
-            "Content-Type": "application/json",
-            "x-api-key": API_KEY,
+          "Content-Type": "application/json",
+          "x-api-key": API_KEY as string,
         },
         body: JSON.stringify({ by: 1 }),
-        });
+      }
+    );
+    if (!response.ok) throw new Error("Failed to increment count");
+    const data = await response.json();
+    return data.value;
+  };
 
-        const data = await response.json();
+  useEffect(() => {
+    if (!API_KEY) {
+      setError(true);
+      return;
+    }
 
-        return data.value;
+    const loadClicks = async () => {
+      try {
+        const value = await getClicksValue();
+        setTotalClicks(value);
+      } catch {
+        setError(true);
+      }
     };
 
-    useEffect(() =>{
-        const loadClicks = async() =>{
-            const value = await getClicksValue();
-            setTotalClicks(value);
-        };
+    loadClicks();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-        loadClicks();
-    }, []);
+  const handleClick = async () => {
+    setThisSessionClicks((v) => v + 1);
+    setTotalClicks((v) => (v ?? 0) + 1);
+    try {
+      await handleIncrement();
+    } catch {
+      // optimistic update already applied; silently ignore network hiccup
+    }
+  };
 
-    return(
-        <div className="w-full h-full text-black text-center
-        flex flex-col justify-center items-center gap-2">
+  return (
+    <div className="w-full h-full text-black text-center flex flex-col justify-center items-center gap-2 relative">
+      <HoverCard openDelay={70} closeDelay={70}>
+        <HoverCardTrigger asChild>
+          <button className="text-white text-sm absolute top-2 right-2 h-6 w-6 hover:bg-[#cdd6f4] hover:text-black transition-all rounded-full">
+            i
+          </button>
+        </HoverCardTrigger>
+        <HoverCardContent side="top" className="max-w-xs">
+          This click counter utilizes the CounterAPI made to keep track of various counts across my multiple websites. Simple, yet essential. Check out more details in the Projects section.
+        </HoverCardContent>
+      </HoverCard>
 
-            <HoverCard openDelay={70} closeDelay={70}>
-                <HoverCardTrigger>
-                    <button className="text-white text-sm absolute top-1/20 right-1/35 h-6 w-6
-                    hover:bg-[#cdd6f4] hover:text-black transition-all rounded-full">
-                        i
-                    </button>
-                </HoverCardTrigger>
-                <HoverCardContent side="top" className="max-w-xs">
-                    This click counter utilizes the CounterAPI made to keep track of various counts across my multiple websites. Simple, yet essential. Check out more details in the Projects section.
-                </HoverCardContent>
-            </HoverCard>
+      <p className="text-[1.2rem] text-[#cdd6f4]">
+        Total Clicks: {error ? "Unavailable" : totalClicks === null ? "Loading" : totalClicks}
+      </p>
 
-            <p className="text-[1.2rem] text-[#cdd6f4]">
-                    Total Clicks: {(totalClicks === 0)? "Loading": totalClicks}
-            </p>
+      <button
+        onClick={handleClick}
+        disabled={error}
+        className="rounded-md bg-[#689bec] p-[0.3rem] text-[1.2rem] transition-transform duration-150 ease-out hover:scale-105 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100"
+      >
+        Click Me
+      </button>
 
-            <button onClick={() => {
-                setThisSessionsClicks(v => v + 1);
-                handleIncrement();
-                setTotalClicks(v => v + 1);
-            }}
-            className="rounded-md bg-[#689bec] p-[0.3rem] text-[1.2rem]
-            hover:p-2 transition-all ">
-                Click Me
-            </button>
-
-            <p className="text-[0.9rem] text-[#cdd6f4]">You clicked: {thisSessionClicks} times</p>
-        </div>
-    )
-};
+      <p className="text-[0.9rem] text-[#cdd6f4]">You clicked: {thisSessionClicks} times</p>
+    </div>
+  );
+}

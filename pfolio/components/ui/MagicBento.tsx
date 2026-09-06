@@ -528,13 +528,13 @@ const MagicBento: React.FC<BentoProps> = ({
             --glow-y: 50%;
             --glow-intensity: 0;
             --glow-radius: 200px;
-            --glow-color: ${glowColor};
-            --border-color: #cdd6f4;
+            --glow-color: 104, 155, 236;
+            --border-color: rgba(205, 214, 244, 0.15);
             --background-dark: #120F17;
             --white: hsl(0, 0%, 100%);
-            --purple-primary: rgba(132, 0, 255, 1);
-            --purple-glow: rgba(132, 0, 255, 0.2);
-            --purple-border: rgba(132, 0, 255, 0.8);
+            --accent-primary: rgba(104, 155, 236, 1);
+            --accent-glow: rgba(104, 155, 236, 0.2);
+            --accent-border: rgba(104, 155, 236, 0.8);
           }
           
           .card-responsive {

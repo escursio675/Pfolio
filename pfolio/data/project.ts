@@ -1,10 +1,11 @@
 import { StaticImageData } from "next/image"
 
-import lofe from "@/public/lofe.webp"
-import urlambda from "@/public/urlambda.webp"
+import lofe from "@/screenshots-raw/lofe.webp"
+import urlambda from "@/screenshots-raw/urlambda.webp"
 import rados from "@/public/rados.webp"
-import clock from "@/public/clock.webp"
-import counterapi from "@/public/counterapi.webp"
+import clock from "@/screenshots-raw/clock.webp"
+import counterapi from "@/screenshots-raw/counterapi.webp"
+import uriel001 from "@/screenshots-raw/uriel001.webp"
 
 export type Techstack = {
     tech: string;
@@ -48,11 +49,22 @@ export const projects: Project[] = [
     title: "CounterAPI",
     techstack: [{tech: "Web Development", hue: "#7dc4e4"}, {tech: "MERN", hue: "#8d95ef"}, {tech: "REST API", hue: "#8d95ef"}, {tech: "CRUD", hue: "#8d95ef"}, {tech: "Authentication", hue: "#8bd5a3"}],
     description: "A lightweight REST API for tracking custom counters across multiple personal websites, with per-site API keys, rate-limiting and admin-managed site provisioning",
-    github: "https://github.com/escursio675/CounterAPI"
+    github: "https://github.com/escursio675/CounterAPI",
+    live: "https://counter-api-drab.vercel.app/"
     
 },
 {
     id: 4,
+    ss: uriel001,
+    title: "URIEL001",
+    techstack: [{tech: "Web Development", hue: "#7dc4e4"}, {tech: "UI/UX", hue: "#cba6f7"}, {tech: "REST API", hue: "#8d95ef"}, {tech: "AI/ML", hue: "#d16d7b"}],
+    description: "The first iteration of a very helpful assistant",
+    github: "https://github.com/escursio675/URIEL001",
+    live: "https://uriel-001.vercel.app/"
+
+},
+{
+    id: 5,
     ss: lofe,
     title: "LOFe",
     techstack: [{tech: "Web Development", hue: "#7dc4e4"}, {tech: "UI/UX", hue: "#cba6f7"}, {tech: "REST API", hue: "#8d95ef"}, {tech: "Productivity", hue: "#8bd5a3"}, {tech: "Multimedia", hue: "#8bd5a3"}],
@@ -63,7 +75,7 @@ export const projects: Project[] = [
 },
 
 {
-    id: 5,
+    id: 6,
     ss: clock,
     title: "ClOCK",
     techstack: [{tech: "Web Development", hue: "#7dc4e4"}, {tech: "UI/UX", hue: "#cba6f7"}, {tech: "Animations", hue: "#9f8cff"}, {tech: "Productivity", hue: "#8bd5a3"}],
