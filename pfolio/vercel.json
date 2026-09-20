@@ -1,0 +1,5 @@
+{
+  "redirects": [
+    { "source": "/nova", "destination": "https://nova-sand-psi-77.vercel.app/", "permanent": false }
+  ]
+}
